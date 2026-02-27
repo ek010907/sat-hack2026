@@ -1,14 +1,10 @@
 #include "ADCS.h"
 
 //Data variable definition
-int MotSpeed1 = 0; 
-int MotSpeed2 = 0;
+int MotSpeed1 = 200; 
+int MotSpeed2 = 200;
 int Speed_adjustment = 120;
 int stop_bit = 0;
-size_t accumulated_spin = 0;
-long previous_time = 0;
-long current_time = 0;
-int previous_spinrate;
 float distance = 0.0;
 int set_dis = 30;
 
