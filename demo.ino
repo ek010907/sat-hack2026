@@ -16,13 +16,13 @@ int MotSpeed2 = 0;
 int Speed_adjustment = 120;
 int stop_bit = 0;
 size_t accumulated_spin = 0;
-volatile long previous_time = 0;
-volatile long current_time = 0;
-volatile int previous_spinrate;
-volatile long previous_spin1=0;
-volatile long previous_spin2=0;
-volatile long accumulated_change_spin1 = 0;
-volatile long accumulated_change_spin2 = 0;
+long previous_time = 0;
+long current_time = 0;
+int previous_spinrate;
+long previous_spin1 = 0;
+long previous_spin2 = 0;
+long accumulated_change_spin1 = 0;
+long accumulated_change_spin2 = 0;
 
 
 //Program initialization
@@ -159,8 +159,8 @@ void motor(int dir ,int speed1, int speed2)
       // this is the first time the function was called
       previous_time = millis();
     }
-    accumulated_change_spin1 += (speed1 - previous_spin1);
-    accumulated_change_spin2 += (speed2 - previous_spin2);
+    accumulated_change_spin1 += abs(speed1 - previous_spin1);
+    accumulated_change_spin2 += abs(speed2 - previous_spin2);
 
 
     previous_spinrate = speed1+speed2;
