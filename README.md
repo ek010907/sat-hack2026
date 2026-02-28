@@ -9,6 +9,7 @@ The file `demo.ino` will run a demo program that uses the ultrasound sensor to a
 # Notes/Troubleshooting
 
 > I am driving both motors at the same speed, but my RC car is drfiting off to the side!
+
 This happens due to misalignment of the ball wheel on the back. You can fix this by adding a trimming factor to each wheel, for example by editing the `motor` function to drive each wheel with a slight imbalance like below.
 
 ```c++
@@ -23,6 +24,7 @@ void motor(int dir ,int speed1, int speed2)
 ```
 
 > I am driving both motors forwards but my car is spinning/going backwards!
+
 Check your connections between the breakout board and motor driver. If this doesn't work, swap pins around. If still confused, reach out to one of the organisers.
 
 > Where can I find more documentation?
